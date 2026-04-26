@@ -1,0 +1,52 @@
+Project 1 Notes
+Points
+Sample rate of 44000Hz means 44000 numbers per second. we must fix sample rate, mono, normalized amplitude, consistent floating-point format for development.
+You analyze the data in frames (a small chunk of consecutive samples)
+we don't jump from frame to frame with no overlap, hop size determines how far from the start of the current frame the next frame starts( eg. frame size of 2048 and hop size of 512 means frame1 0-2047, frame2 512-2559, frame3 1024-3071, etc) allows overlap. it is frames you convert to frequency representation.
+for music frame sizes between 1024-4096 samples at 22kHz are common. choose based on what system values more. smallerhops calculate smoother temporal metrics but larger hops has faster computation. best choice is framesize/4
+frequency resolution ~ samplerate/frame size. meaning you can clearly distinguish between frequencies separated by that value.
+low-level feature is a single numeric description per frame. some of them are as follows:
+1. RMS Energy : measures average energy in the time domain/frame (how strong is the signal in this frame)
+2. Spectral Centroid : measures where energy concentrates at, if at high frequencies then centroid is higher and vice versa (where is the center of mass of the frequency distribution)
+3. Spectral Bandwidth: measures how spread out frequencies are around the centroid
+4. Spectral rolloff: tells at what frequency most of the spectral energy lies below (usually measured at 85% energy)
+5. Zero Crossing Rate: measures how often the waveform crosses zero amplitude
+6. Spectral flatness: measures how many frequencies energy is concentrated in (high flatness means energy spread out, noisy. low flatness means energy concentrated in few, tonal sound)
+7. Spectral contrast: Measures the difference between strongest peaks and nearby valleys in a spectrum within the frame. checks sharpness
+8. Onset Strength: Measures the difference in energy between two frames
+9. Onset Density: Measures how often there is a change in onset per unit time (for detecting rhythm, beats, etc)
+10. Tempo: Measures how slow or fast beats occur in song
+11. Chroma: Collapses frequencies into pitch classes and detects energy in each pitch class
+12. Tonal entropy: Measure how spread out energy is among the pitch classes in each frame
+13. Tonal Clarity: Measures how much the chroma/music tends to stay to one key or how unpredictable it is
+14. Harmonic-percussive balance: Checks how much energy belongs to harmonic sounds and how much belongs to percussive sounds
+
+
+
+
+
+
+
+
+We use behavioural descriptors to extract value from the low level feature:
+Variance tells how much a feature moves. if low then the feature is stable, if high then its unstable
+Slope tells you overall trend of feature. can tell if the track is building or losing intensity
+Short-term stability tells you how stable features are over short windows, like 2 seconds
+Structural contrast tells you how different distinct parts of the song are
+
+we can use factor analysis to derive latent factors and label them and then use those to model
+
+
+
+
+
+
+
+
+
+Questions
+so does it mean all frequencies that fall within a certain pitch class all have that kind of "sound"?
+
+
+
+-what is the name of the method used to group derived factors from features without the features factors explicitly being said.
