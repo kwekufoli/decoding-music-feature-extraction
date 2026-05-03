@@ -1,8 +1,8 @@
 # Decoding Music — Feature Extraction Pipeline
 
-This is the feature extraction layer of a larger music intelligence project. It takes a song as an audio file, breaks it down into a structured set of numbers that describe how the song sounds, and outputs those numbers as a dataset that can be used for comparison and analysis.
+This is the feature extraction layer of a larger music decoding project. It takes a song as an audio file, breaks it down into a structured set of numbers that describe how the song sounds, and outputs those numbers as a dataset that can be used for comparison and analysis.
 
-The broader goal is to help artists — specifically emerging Afrobeats artists — understand how their music compares to songs already performing well in the space, and what specifically is working or not working about their sound. This pipeline is the first step in that process: turning audio into something a machine can reason about.
+The broader goal is to help artists understand how their music compares to songs already performing well in the space, and what specifically is working or not working about their sound. This pipeline is the first step in that process: turning audio into something a machine can reason about.
 
 It does not make any judgements on its own. That comes later.
 
