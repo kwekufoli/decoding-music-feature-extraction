@@ -4,7 +4,7 @@ This is the feature extraction layer of a larger music decoding project. It take
 
 The broader goal is to help artists understand how their music compares to songs already performing well in the space, and what specifically is working or not working about their sound. This pipeline is the first step in that process: turning audio into something a machine can reason about.
 
-It does not make any judgements on its own. That comes later.
+It does not make any judgements on its own.
 
 ---
 
@@ -18,7 +18,7 @@ Given an audio file, the pipeline extracts features across several dimensions of
 - **Rhythm** — onset strength, tempo, how consistently and intensely events occur
 - **Harmony** — which pitch classes are active, how harmonically clear or complex the song is, what chord qualities dominate
 - **Mix definition** — how well-separated the frequencies are across the bass, mids and highs
-- **Section-level variation** — how the above properties change across four equal segments of the song
+- **Section-level variation** — how the above properties change across segments of the song
 
 Each song ends up as a single row in a dataset, with all of these properties as columns. The feature set is split into two pools: one for comparison (used to measure similarity between songs) and one for interpretation (used to explain what the numbers mean in plain language).
 
