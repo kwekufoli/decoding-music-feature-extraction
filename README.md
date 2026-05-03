@@ -1,4 +1,4 @@
-# Music Intelligence — Feature Extraction Pipeline
+# Decoding Music — Feature Extraction Pipeline
 
 This is the feature extraction layer of a larger music intelligence project. It takes a song as an audio file, breaks it down into a structured set of numbers that describe how the song sounds, and outputs those numbers as a dataset that can be used for comparison and analysis.
 
